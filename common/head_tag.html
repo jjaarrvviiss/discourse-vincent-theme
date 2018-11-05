@@ -25,7 +25,12 @@
     disabled=createTopicDisabled
     label=createTopicLabel
   }}
-
+  
+  {{#if showDismissRead}}
+    <button title="{{i18n topics.bulk.dismiss_topics_tooltip}}" class='btn dismiss-read' {{action dismissRead "topics"}}>{{i18n topics.bulk.dismiss_topics}}</button>
+    <button title="{{i18n topics.bulk.dismiss_posts_tooltip}}" class='btn dismiss-read' {{action dismissRead "posts"}}>{{i18n topics.bulk.dismiss_posts}}</button>
+  {{/if}}
+    
   {{#if showCategoryNotifications}}
     {{category-notifications-button value=category.notification_level category=category}}
   {{/if}}
